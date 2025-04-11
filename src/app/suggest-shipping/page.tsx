@@ -1,3 +1,4 @@
+'use client';
 
 import {suggestShippingProvider} from '@/ai/flows/suggest-shipping-provider';
 import {Button} from '@/components/ui/button';

@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use server';
 /**
  * @fileOverview This file defines a Genkit flow for suggesting the optimal shipping provider (DPD or Pošta Slovenije)
@@ -11,7 +10,8 @@
 
 import {ai} from '@/ai/ai-instance';
 import {z} from 'genkit';
-import {getDpdShippingRates, getPostaSlovenijeShippingRates} from '@/services/dpd';
+import {getDpdShippingRates} from '@/services/dpd';
+import {getPostaSlovenijeShippingRates} from '@/services/posta-slovenije';
 
 const SuggestShippingProviderInputSchema = z.object({
   destination: z.string().describe('The destination address for the shipment.'),
@@ -88,4 +88,3 @@ const suggestShippingProviderFlow = ai.defineFlow<
     };
   }
 );
-
