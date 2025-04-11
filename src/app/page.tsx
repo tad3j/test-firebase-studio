@@ -1,3 +1,4 @@
+
 'use client';
 
 import {SidebarProvider, Sidebar, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarHeader, SidebarGroup, SidebarGroupLabel} from '@/components/ui/sidebar';
@@ -8,8 +9,6 @@ import { useEffect, useState } from 'react';
 import {getWmsOrders, getWmsInventory} from '@/services/wms';
 import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { trackDpdPackage } from '@/services/dpd';
-import { trackPostaSlovenijePackage } from '@/services/posta-slovenije';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
@@ -62,9 +61,9 @@ export default function Home() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="#">
+                  <a href="/track">
                     <Icons.package className="mr-2 h-4 w-4" />
-                    <span>Shipments</span>
+                    <span>Track</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
